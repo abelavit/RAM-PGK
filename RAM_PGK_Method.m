@@ -3,11 +3,9 @@ clear all
 close all
 
 % Load the dataset
-load TrainTestData
-TrainSixFold = Train_Data;
-TestSixFold = Test_Data;
-
-clear Train_Data Test_Data
+load ModelData
+TrainSixFold = Final_Combined_Fold;
+TestSixFold = Fold;
 
 cd 'C:\Users\User\Desktop\libsvm-weights-3.22\matlab'
 % Change directory to where libsvm is saved. e.g. cd 'C:\Users\User\Desktop\libsvm-weights-3.22\matlab'
@@ -25,7 +23,7 @@ for i = 1:6 % get the test and train datasets (6 fold cross validation)
     Test_label = str2num(test_label); % Get the Test dataset labels
 
     % Train LibSVM-weights. Empty square brackets denote we are not supplying weights
-    model=svmtrain([],Train_label,Train,['-s 0 -t 0 -c 0.3']); % -s 0; svm type = C-SVC, -t 0; kernel = linear, -c 0.3; cost = 0.3
+    model=svmtrain([],Train_label,Train,['-s 0 -t 0']); % -s 0; svm type = C-SVC, -t 0; kernel = linear, -c 0.3; cost = 0.3
     
     % Test the classifier
     [pred,acc,prob_values]=svmpredict(Test_label,Test,model);

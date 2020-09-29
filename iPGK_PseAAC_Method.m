@@ -3,12 +3,11 @@ clear all
 close all
 
 % Load the dataset and iPGK_PseAAC feature set
-load TrainTestData
+load ModelData
 load iPGK_Data
 
-TrainSixFold = Train_Data;
-TestSixFold = Test_Data;
-clear Train_Data Test_Data
+TrainSixFold = Final_Combined_Fold;
+TestSixFold = Fold;
 
 cd 'C:\Users\User\Desktop\libsvm-weights-3.22\matlab'
 % Change directory to where libsvm is saved. e.g. cd 'C:\Users\User\Desktop\libsvm-weights-3.22\matlab'
