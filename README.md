@@ -16,4 +16,5 @@ The above scripts calculate the 6-fold cross-validation on the same datasets. Th
 - 'RAM_PGK_Preprocessing' for RAM-PGK features
 
 'Phosphoglycerylationstruct' file contains the protein sequences with true labels used in this work. 
+
 'libsvm-weights-3.22' is the LibSVM package used in this work.
